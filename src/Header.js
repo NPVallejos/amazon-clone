@@ -1,6 +1,9 @@
 import React from 'react'
 import './Header.css';
+
+// material-ui imports
 import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 /*
 ** This component is the navbar for the website
@@ -13,7 +16,7 @@ function Header() {
     return (
         <div className='header'>
             <img 
-                className="header__logo"
+                className="header__logo" 
                 src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
             />
             
@@ -38,8 +41,9 @@ function Header() {
                     <span className='header__optionLineTwo'>Prime</span>                    
                 </div>
                 
-                <div className='header__option'>
-                    <span className='header__optionLineOne'>Shopping Cart</span>
+                <div className='header__optionBasket'>
+                    <ShoppingBasketIcon />
+                    <span className="header__optionLineTwo header__basketCount">0</span>
                 </div>
             </div>
         </div>
