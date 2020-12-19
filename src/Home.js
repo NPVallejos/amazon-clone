@@ -13,7 +13,12 @@ function Home() {
                 />
 
                 <div className="home__row">
-                    <Product />
+                    <Product 
+                        title='Samsung Galaxy Buds Live, True Wireless Earbuds w/Active Noise Cancelling (Wireless Charging Case Included), Mystic White (US Version)'
+                        image='https://m.media-amazon.com/images/I/313haaU8baL._AC_SY175_.jpg'
+                        price='169.99'
+                        rating={5}
+                    />
                     <Product />
                 </div>
 
