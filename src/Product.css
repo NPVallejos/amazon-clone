@@ -13,8 +13,9 @@
 }
 
 .product__info {
-  height: 100px;
+  height: 100%;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .product__price {
@@ -26,6 +27,7 @@
 }
 
 .product > img {
+  display: flex;
   max-height: 200px;
   width: 100%;
   object-fit: contain;
