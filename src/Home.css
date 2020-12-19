@@ -1,0 +1,12 @@
+/* All CSS related to Home.js will live here */
+
+/*  1. z-index of -1 ensures other elements appear on top 
+**  2. margin-bottom: -150px allows other elements to actually appear inside element of this class
+**  3. mask-image gives it a downward linear gradient (opacity goes from 1 to 0 in a linear style)
+*/
+.home__image {
+  width: 100%;
+  z-index: -1;
+  margin-bottom: -150px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
