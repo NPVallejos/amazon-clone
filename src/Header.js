@@ -23,19 +23,22 @@ function Header() {
 
             <div className="header__nav">
                 <div className='header__option'>
-                    Sign in button
+                    <span className='header__optionLineOne'>Hello Guest</span>
+                    <span className='header__optionLineTwo'>Sign In</span>
                 </div>
 
                 <div className='header__option'>
-                    Returns and Orders
+                    <span className='header__optionLineOne'>Returns</span>
+                    <span className='header__optionLineTwo'>& Orders</span>
                 </div>
                 
                 <div className='header__option'>
-                    Your Prime
+                    <span className='header__optionLineOne'>Your</span>
+                    <span className='header__optionLineTwo'>Prime</span>                    
                 </div>
                 
                 <div className='header__option'>
-                    Shopping Cart
+                    <span className='header__optionLineOne'>Shopping Cart</span>
                 </div>
             </div>
         </div>
