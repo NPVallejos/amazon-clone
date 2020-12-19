@@ -1,5 +1,20 @@
 /* All CSS related to Home.js will live here */
 
+.home {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+}
+
+.home__row {
+  display: flex;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 /*  1. z-index of -1 ensures other elements appear on top 
 **  2. margin-bottom: -150px allows other elements to actually appear inside element of this class
 **  3. mask-image gives it a downward linear gradient (opacity goes from 1 to 0 in a linear style)
