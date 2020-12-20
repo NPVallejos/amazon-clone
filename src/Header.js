@@ -5,6 +5,7 @@ import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from 'react-router-dom';
+import { useStateValue } from './StateProvider.js';
 
 /*
 ** This component is the navbar for the website
@@ -14,6 +15,8 @@ import { Link } from 'react-router-dom';
 **    3. Options buttons (sign in, Returns & orders, Your Prime, shopping cart)
 */
 function Header() {
+    const [{ basket }, dispatch] = useStateValue();
+    
     return (
         <div className='header'>
             <Link to='/'>
@@ -47,7 +50,7 @@ function Header() {
                 <Link to='/checkout'>
                     <div className='header__optionBasket'>
                         <ShoppingBasketIcon />
-                        <span className="header__optionLineTwo header__basketCount">0</span>
+                        <span className="header__optionLineTwo header__basketCount">{basket?.length}</span>
                     </div>
                 </Link>
             </div>
