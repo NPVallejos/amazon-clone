@@ -18,12 +18,12 @@
 
 ### Homepage
 
-![alt text](./public/product-quantity.png)
+![src text](./public/product-quantity.png)
 
 ### Checkout Page
 
-![alt text](./public/product-quantity-checkout-page.png)
+![src text](./public/product-quantity-checkout-page.png)
 
 ### Dropdown Menu
 
-![alt text](./public/dropdown-menu.png)
+![src text](./public/dropdown-menu.png)
