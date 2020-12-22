@@ -1,5 +1,7 @@
-import React from 'react'
+// Use State hook 'useState' to manage product 'quantity'
+import React, { useState } from 'react'
 import './Product.css';
+import ProductQuantity from './ProductQuantity';
 import { useStateValue } from './StateProvider.js';
 
 /* 
@@ -12,10 +14,14 @@ import { useStateValue } from './StateProvider.js';
 function Product({ id, title, image, price, rating }) {
     const [{basket}, dispatch] = useStateValue();
 
-    console.log('this is the basket >>> ', basket);
+    // Declare new state variable 'quantity'
+    // Declare callback function 'setQuantity' to modify 'quantity'
+    const [quantity, setQuantity] = useState(1);
+
+    // console.log('this is the basket >>> ', basket);
 
     const addToBasket = () => {
-        // dispath the item into the data layer
+        // dispatch the item into the data layer
         dispatch({
             type: 'ADD_TO_BASKET',
             item: {
@@ -24,6 +30,7 @@ function Product({ id, title, image, price, rating }) {
                 image: image,
                 price: price,
                 rating: rating,
+                quantity: quantity,
             },
         });
     };
@@ -40,7 +47,7 @@ function Product({ id, title, image, price, rating }) {
                 <div className="product__rating">
                     {Array(rating)
                         .fill()
-                        .map(() => (
+                        .map((_, i) => (
                         <p>⭐</p>
                     ))}
                 </div>
@@ -51,6 +58,8 @@ function Product({ id, title, image, price, rating }) {
                 src={image}
                 alt=""
             /> 
+            
+            <ProductQuantity quantity={quantity} setQuantity={setQuantity} />
 
             <button onClick={addToBasket}>Add to basket</button> 
         </div>

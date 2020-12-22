@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CheckoutProduct.css';
+import ProductQuantity from './ProductQuantity';
 import { useStateValue } from './StateProvider.js';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function CheckoutProduct({ id, image, title, price, rating }) {
+function CheckoutProduct({ id, image, title, price, rating, quantity }) {
     const [{ basket }, dispatch] = useStateValue();
 
+    // Declare new state variable 'quantity'
+    // Declare callback function 'setQuantity' to modify 'quantity'
+    const [quantityState, setQuantity] = useState(quantity);
+    
     const removeFromBasket = () => {
-        // TODO: Remove the item from the basket
         dispatch({
             type: 'REMOVE_FROM_BASKET',
             id: id,
         });
     };
     
+    const changeQuantityInBasket = (newQuantityValue) => {
+        dispatch({
+            type: 'MODIFY_QUANTITY',
+            id: id,
+            quantity: quantityState,
+        });
+        setQuantity(newQuantityValue);
+    }
+
     return (
         <div className="checkoutProduct">
             <div className='checkoutProduct__imageContainer'>
@@ -34,6 +48,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
                         )
                     }
                 </div>
+                <ProductQuantity quantity={quantityState} setQuantity={changeQuantityInBasket} />
                 <button onClick={removeFromBasket}>Remove from Basket</button>
             </div>
             
